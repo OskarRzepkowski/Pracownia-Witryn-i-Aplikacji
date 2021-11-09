@@ -1,0 +1,21 @@
+<html>
+ <body>
+	<div style="color:rgb(0, 247, 255);font-size:25px;">
+	   <script language="JavaScript">
+            var No=prompt("ilość N","");
+            var t=prompt("czas w latach","");
+            var cp=prompt("czas połowiczny","");
+            var a=parseFloat(No);
+            var b=parseFloat(t);
+            var c=parseFloat(cp);
+            document.write("No="+a+"[sztuk]<br>");
+            document.write("t="+b+"[lat]<br>");
+            document.write("T1/2="+c+"[lat]<br>");
+            var lambda=Math.log(2)/cp;
+            var N=a*Math.exp(-lambda*b);
+            document.write("<font size=50px color=green>Lambda="+lambda.toFixed(7)+"[1/rok]</font><br>");
+            document.write("<font size=50px color=red>N="+N.toFixed(7)+"[sztuk]</font><br>");
+        </script>
+	</div>
+ </body>
+</html>

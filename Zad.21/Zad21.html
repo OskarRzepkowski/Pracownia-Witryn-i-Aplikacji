@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>
+        Obliczenie pola oraz obwodu trapezu
+    </title>
+    <script language="JavaScript">
+        function drabina_rzepkowski(d_rze, x_rze) {
+            d = parseFloat(d_rze)
+            x = parseFloat(x_rze)
+            var długość =Math.sqrt(d**2 + x**2)
+            document.getElementsByName('długość')[0].value = długość.toFixed(1); /* na dokument */
+            alert("Długość drabiny=" + długość.toFixed(1) + " m"); /* do okna Alert */
+            document.getElementById("wprowadz_długość_rze").innerHTML = "Długość drabiny=" + długość.toFixed(1) + " m" + "<br>"; /* do tabeli */
+        }
+
+        function alfa_rzepkowski(d_rze, x_rze) {
+            d = parseFloat(d_rze)
+            x = parseFloat(x_rze)
+            var alfa=Math.atan(d / x) * 180 / Math.PI
+            document.getElementsByName('alfa')[0].value = alfa.toFixed(1); /* na dokument */
+            alert("Alfa=" + alfa.toFixed(2) + "stopni"); /* do okna Alert */
+            document.getElementById("wprowadz_alfa_rze").innerHTML = "Alfa=" + alfa.toFixed(2) + "stopni" + "<br>"; /* do tabeli */
+        }
+    </script>
+</head>
+<body>
+    Obliczanie odległości od drabiny i kąta
+    <br><br>
+    <form name="formularz_rzepkowski"
+        onsubmit="drabina_rzepkowski(this.bokd.value, this.bokx.value,); alfa_rzepkowski(this.bokd.value, this.bokx.value); return false">
+        Podaj d= <input type="number" size="6" name="bokd">
+        Podaj x= <input type="number" size="6" name="bokx">
+        <br><br>
+        <input type="submit" value="oblicz">
+        Drabina= <input type="number" size="6" name="długość">
+        Alfa= <input type="number" size="6" name="alfa">
+    </form>
+    <table>
+        <tr id="wprowadz_długość_rze"></tr>
+        <tr id="wprowadz_alfa_rze"></tr>
+    </table>
+</body>
+
+</html>

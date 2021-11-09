@@ -1,0 +1,29 @@
+<html>
+ <body>
+	<div style="color:rgb(60, 231, 7);font-size:25px;">
+	    <script language="JavaScript">
+            var x1_rze=prompt("x1");
+            var x2_rze=prompt("x2");
+            var a=parseFloat(x1_rze);
+            var b=parseFloat(x2_rze);
+            document.write("x1="+a+"<br>");
+            document.write("x2="+b+"<br>");
+
+            var y=3*Math.pow(a,5/7);
+            document.write("y="+y+"<br>");
+
+            function toRadians (angle) {
+            return angle * (Math.PI / 180);}
+
+            var x1_rad=toRadians(a);
+            document.write("x1(rad)="+x1_rad.toFixed(4)+"<br>");
+
+            var y1=2*Math.cos(x1_rad)+(2*Math.sin(x1_rad));
+            document.write("y1="+y1.toFixed(6)+"<br>");
+            
+            var y3=Math.cbrt(Math.pow(a,5)+(2*Math.pow(b,4)))*Math.abs(a-b);
+            document.write("y3="+y3.toFixed(6));
+        </script>
+	</div>
+ </body>
+</html>

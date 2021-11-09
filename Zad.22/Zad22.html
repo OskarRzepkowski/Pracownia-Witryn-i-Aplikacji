@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Artur i Dawid</title>
+        <script language="JavaScript">
+            function wysokość_samolotu(odl_rze, s_rze){
+                var x=parseFloat(odl_rze)
+                var y=parseFloat(s_rze)
+                var h=Math.sqrt((Math.pow(y,2))-(Math.pow(x,2)))
+                document.getElementsByName('wysokość')[0].value = h.toFixed(2); /* na dokument */
+                alert("Wysokość=" + h.toFixed(2) + " m"); /* do okna Alert */
+                document.getElementById("wysokość_rze").innerHTML = "Wysokość=" + h.toFixed(2) + " m" + "<br>"; /* do tabeli */
+            } 
+
+            function kąt_samolotu(odl_rze, s_rze){
+                var x=parseFloat(odl_rze)
+                var y=parseFloat(s_rze)
+                var kąt_rze=Math.acos(y/x)
+                document.getElementsByName('kąt')[0].value = kąt_rze.toFixed(2); /* na dokument */
+                alert("Kąt samolotu=" + kąt_rze.toFixed(2) + "stopni"); /* do okna Alert */
+                document.getElementById("kąt_samolotu_rze").innerHTML = "Kąt samolotu=" + kąt_rze.toFixed(2) + "stopni" + "<br>"; /* do tabeli */
+            } 
+        </script>   
+</head>
+<body>
+    Obliczanie odległości od drabiny i kąta
+    <br><br>
+    <form name="formularz_rzepkowski"
+        onsubmit="wysokość_samolotu(this.x.value, this.y.value,); kąt_samolotu(this.x.value, this.y.value); return false">
+        Podaj odległość= <input type="number" size="6" name="x">
+        Podaj drogę= <input type="number" size="6" name="y">
+        <br><br>
+        <input type="submit" value="oblicz">
+        Wysokość= <input type="number" size="6" name="wysokość">
+        Kąt= <input type="number" size="6" name="kąt">
+    </form>
+    <table>
+        <tr id="wysokość_rze"></tr>
+        <tr id="kąt_samolotu_rze"></tr>
+    </table>
+</body>
+</html>

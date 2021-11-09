@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>
+        Obliczenie pola oraz obwodu trapezu
+    </title>
+    <script language="JavaScript">
+        function pole_rzepkowski(a_rze, b_rze, h_rze,) {
+            a = parseFloat(a_rze)
+            b = parseFloat(b_rze)
+            h = parseFloat(h_rze)
+            var pole_wynik = ((a+b)*h)/2
+            document.getElementsByName('pole')[0].value = pole_wynik.toFixed(1); /* na dokument */
+            alert("Pole=" + pole_wynik.toFixed(1) + " cm^2"); /* do okna Alert */
+            document.getElementById("wprowadz_pole_rze").innerHTML = "Pole=" + pole_wynik.toFixed(1) + " cm^2" + "<br>"; /* do tabeli */
+            return false
+        }
+
+        function obw_rzepkowski(a_rze, b_rze, h_rze) {
+            a = parseFloat(a_rze)
+            b = parseFloat(b_rze)
+            h = parseFloat(h_rze)
+            var ramię= Math.sqrt(((b - a) / 2)**2 + h**2)
+            var obw_wynik = a+b+(ramię.toFixed(2)*2)
+            document.getElementsByName('obw')[0].value = obw_wynik.toFixed(1); /* na dokument */
+            alert("Obwód=" + obw_wynik.toFixed(1) + "cm"); /* do okna Alert */
+            document.getElementById("wprowadz_obw_rze").innerHTML = "Obwód=" + obw_wynik.toFixed(1) + "cm" + "<br>"; /* do tabeli */
+            return false
+        }
+    </script>
+</head>
+<body>
+    Obliczenie pola oraz obwodu trapezu
+    <br><br>
+    <form name="formularz_rzepkowski"
+        onsubmit="pole_rzepkowski(this.boka.value, this.bokb.value, this.wysokość.value); obw_rzepkowski(this.boka.value, this.bokb.value, this.wysokość.value); return false">
+        Podaj a= <input type="number" size="6" name="boka">
+        Podaj b= <input type="number" size="6" name="bokb">
+        Podaj h= <input type="number" size="6" name="wysokość">
+        <br><br>
+        <input type="submit" value="oblicz">
+        Pole= <input type="number" size="6" name="pole">
+        Obwód= <input type="number" size="6" name="obw">
+    </form>
+    <table>
+        <tr id="wprowadz_pole_rze"></tr>
+        <tr id="wprowadz_obw_rze"></tr>
+    </table>
+</body>
+
+</html>
